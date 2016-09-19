@@ -20,7 +20,7 @@ public class OOPExample {
 		jillian.talk();
 //		jillian.name = "BoogerNose";
 //		jillian.talk();
-		
+		//((Student))
 		jordan.talk();
 		joseph.talk();
 
