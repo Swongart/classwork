@@ -6,11 +6,13 @@ public class StringPractice {
 	
 	static Scanner input;
 	static String user;
-	static int lineCount;
+	//static int lineCount;
+	static boolean inLoop;
+	static String response;
 	
 	public static void main(String[] args){
 		createAScanner();
-		lineCount=0;
+		//lineCount=0;
 		demonstrateStringMethods();
 		promptName();
 		talkForever();
@@ -28,11 +30,27 @@ public class StringPractice {
 	}
 	
 	public static void talkForever(){
-		while(true){
-			promptInput();
+		//while(true){
+		//	promptInput();
+	//}
+		inLoop=true;	
+		while (inLoop){
+			print("Greetings, "+user+". How are you?");
+			response=getInput();
+			if (response.indexOf("good")>=0){
+				print("I'm so happy you're good.");
+			}
+				else{
+				print("I'm sorry, I don't understand you.");
+				}
+			}
 		}
-	}
+	
 
+	public static String getInput(){
+		return input.nextLine();
+	}
+	
 	public static void promptInput(){
 		print("Try inputing a String!");
 		String userInput = input.nextLine();

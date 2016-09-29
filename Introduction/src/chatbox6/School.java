@@ -19,5 +19,16 @@ public class School implements Topic {
 			}
 		}
 	}
+	public boolean isTriggered(String userInput){
+//		String[] triggers={"school","class","teacher"};
+//		you could use a for loop to iterate through an array.
+		if (SharonChatBox.findKeyword(userInput, "school", 0)>=0){
+			return true;
+		}
+		if (SharonChatBox.findKeyword(userInput, "class", 0)>=0){
+			return true;
+		}
+		return false;
+	}
 
 }

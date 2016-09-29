@@ -11,6 +11,7 @@ public class SharonChatBox {
 	static String response;
 	static Topic school;
 	static Topic like;
+	static Topic hello;
 	
 	public static void main(String[] args){
 		createTopics();
@@ -42,14 +43,33 @@ public class SharonChatBox {
 			if (findKeyword(response,"good",0)>=0){
 				print("I'm so happy you're good.");
 			}
-			else if (findKeyword(response,"school",0)>=0){
-				inLoop=false;//exit this loop
-				school.talk();
-			}
-				else{
-				print("I'm sorry, I don't understand you.");
+			
+			
+//				else{
+//				print("I'm sorry, I don't understand you.");
+//				}
+//			}
+				else if (findKeyword(response, "school", 0)>=0)
+				{
+					inLoop = false;//exit this loop
+					school.talk();
 				}
-			}
+				else if (findKeyword(response, "like", 0)>=0)
+				{
+					inLoop = false;
+					like.talk();      
+				}
+				else if (findKeyword(response, "hello", 0)>=0)
+				{
+					inLoop = false;
+					hello.talk();      
+				}
+				else 
+				{
+					print("I do not understand you.");
+				}
+		}
+		
 		}
 	public static int findKeyword(String searchString, String key, int startIndex){
 		
@@ -58,30 +78,30 @@ public class SharonChatBox {
 		//set all the letters to lowercase
 		phrase=phrase.toLowerCase();
 		key=key.toLowerCase();
-		
+		/*
 		System.out.println("The phrase is "+phrase);
 		System.out.println("The key is "+key);
-		
+		*/
 		//psn=position;
 		int psn=phrase.indexOf(key); 
-		
+		/*
 		System.out.println("The postition found is "+psn);
 		//keep looking for the word until you find the right context.
-		
+		*/
 		while (psn>=0){
 			String before=" ";
 			String after=" ";
 			if (psn+key.length() <phrase.length()){
 				after=phrase.substring(psn+key.length(), psn+key.length()+1).toLowerCase();
-				System.out.println("the character after "+key+" is "+after);
+				/*System.out.println("the character after "+key+" is "+after);*/
 			}
 			//if the phrase does not begin with this word
 			if(psn>0){
 				before=phrase.substring(psn-1,psn).toLowerCase();
-				System.out.println("the character before "+key+" is "+before);
+				/*System.out.println("the character before "+key+" is "+before);*/
 			}
 			if (before.compareTo("a")<0 && after.compareTo("a")<0 &&after.compareTo("a")<0){
-				System.out.println(key+" was found at "+psn);
+				/*System.out.println(key+" was found at "+psn);*/
 				if (noNegations(phrase,psn)){
 					return psn;
 				}
@@ -90,7 +110,7 @@ public class SharonChatBox {
 			//in case the keyword was not found yet,
 			//check the rest of the string.
 			psn=phrase.indexOf(key,psn+1);
-			System.out.println(key+" was not found. Checking "+psn);
+			/*System.out.println(key+" was not found. Checking "+psn);*/
 		}
 				
 		return -1;
@@ -168,6 +188,7 @@ public class SharonChatBox {
 		input=new Scanner(System.in);
 		school=new School();
 		like= new SharonLike();
+		hello= new SharonHello();
 	}
 	
 	
