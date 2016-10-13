@@ -6,10 +6,34 @@ public class ArraysMain {
 		//This is how you time how quickly a computer processor 
 		long startTime=System.currentTimeMillis();
 		arrayIntroMethod();
+		
+		String[] someStrings = new String[100];	
+		populateArray(someStrings);
+		
+		changeString(someStrings[99]);
+		
+		printArray(someStrings);
 		long endTime=System.currentTimeMillis();
 		System.out.println("Completed method in "+(endTime-startTime)+" milliseconds");
 	}
 	
+	private static void changeString(String s){
+		s="This string has been changed.";
+	}
+	
+private static void printArray(String[] a) {
+	
+	for (String s: a){
+		System.out.println(s);
+	}
+	}
+
+private static void populateArray(String[] a) {
+	for (int index=0;index<a.length; index++){
+		a[index]="value"+(index+1);
+	}
+	}
+
 public static void arrayIntroMethod(){
 	//construct 2 integer arrays
 			//these two methods do the same thing
@@ -35,16 +59,17 @@ public static void arrayIntroMethod(){
 			//these two constructors are different
 			String[] strings1={"","",""};
 			String[] strings2= new String[3];
-			
-			for (String s: strings1){
-				System.out.println(s);
+			//strings2[]="value 1";
+				
+			//this loop is for instantiating the strings
+			for (int index=0;index<strings2.length; index++){
+				strings2[index]="value"+(index+1);
 			}
+			
+			//this loop for printing the strings.
 			for (String s: strings2){
 				System.out.println(s);
 			}
-			
-			//String[] strings1={"","",""};
-			//String[] strings2=new String[3];
 			
 }
 }
