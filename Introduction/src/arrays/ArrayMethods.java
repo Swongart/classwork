@@ -6,13 +6,13 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     //double[] list ={5.0,4.0,3.0,2.0,1.0};
-    int[] list={1,2,3,4,5};
+    //int[] list={1,2,3,4,5};
     //int psn = searchUnsorted(list,3);
     //System.out.println(psn);
     //System.out.println(isSorted(list));
     //System.out.println(getStats(list));
-    System.out.println(reverseOrder(list));
-    
+    //System.out.println(reverseOrder(list));
+    	
      /**
       * IMPORTANT NOTE: 
       * This homework assignment will be weighted 4x.
@@ -22,8 +22,8 @@ public class ArrayMethods {
       * says that it isn't perfect!
       * */
     }
-    
-    public static int searchUnsorted(int[] arrayToSearch, int key){
+   
+	public static int searchUnsorted(int[] arrayToSearch, int key){
     /**
      * this method take an unsorted int array (arrayToSearch) and returns an 
      * int corresponding to the index of a key, if it is in the array
