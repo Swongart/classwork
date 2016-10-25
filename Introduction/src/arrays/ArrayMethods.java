@@ -6,13 +6,17 @@ public class ArrayMethods {
 
     public static void main(String[] args) {
     //double[] list ={5.0,4.0,3.0,2.0,1.0};
-    //int[] list={1,2,3,4,5};
+    int[] list1={1,2,0,3,4,5};
+    //int[] list2={1,2,3,3,5,6};
+   // int[] list={1,2,3,4,5};
     //int psn = searchUnsorted(list,3);
     //System.out.println(psn);
     //System.out.println(isSorted(list));
     //System.out.println(getStats(list));
     //System.out.println(reverseOrder(list));
-    	
+    	//System.out.println(sort(list));
+    //System.out.println(countDifferences(list1,list2));
+    System.out.println(longestConsecutiveSequence(list1));
      /**
       * IMPORTANT NOTE: 
       * This homework assignment will be weighted 4x.
@@ -29,14 +33,13 @@ public class ArrayMethods {
      * int corresponding to the index of a key, if it is in the array
      * if the key is not in the array, this method returns -1
      * */
-    for (int i=0;i<arrayToSearch.length;i++){
-    	if (key==arrayToSearch[i]){
-    		return i;
-    	}
-    	
-    	return -1;	
-    	
-    }
+		 for (int i=0;i<arrayToSearch.length;i++){
+		    	if (key==arrayToSearch[i]){
+		    		return i;
+		    	}
+		      }
+
+		     return -1;
     
      
     }
@@ -53,25 +56,44 @@ public class ArrayMethods {
         	if (key==sortedArrayToSearch[i]){
         		return i;
         	}
-        	
-        	return -1;	
-        	
         }
+      
+    return -1;
     }
     
     public static boolean isSorted(int[] array){
         /**
          * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
          * */
-    	 for (int i=0;i<array.length-1;i++){
-             if(array[i]>array[i+1]){
-                 return true;
-             }
-         }
-        return false;
+    	for (int i=0;i<array.length-1;i++){
+            if(array[i]<array[i+1]){
+                return false;
+            }
+        }
+       return true;
+    }
+    
+    public static void swap(double[] array, int i, int j){
+        double placeholder= array[i];
+        array[i]=array[j];
+        array[j]=placeholder;
+        
     }
     
     
+    public static void sort(double[] array){
+        for (int i = 0; i < array.length - 1; i++){
+        	int tempLowIndex = i;
+        for (int j = i + 1; j < array.length; j++){
+        	if (array[j] < array[tempLowIndex]){
+            tempLowIndex = j;
+        	}
+        }
+	   if(tempLowIndex!=i){
+	         swap(array, tempLowIndex, i);
+	   } 
+      }//end for
+    }
     public static double[] getStats(double[] array){
         /** 
          * This method return a double[] contain a WHOLE BUNCH of stats
@@ -105,9 +127,11 @@ public class ArrayMethods {
              }
          }
          //find the median
+//         double[] tempArray= new double[array.length];
+//         tempArray= sort(array);
          int middle = array.length/2;
          if (array.length%2 == 1) {
-             double median= (array[middle]);
+           double median= array[middle];
          } else {
              double median= (array[middle-1] + array[middle]) / 2.0;
          }
@@ -171,7 +195,21 @@ public class ArrayMethods {
          * countDifferences({1,2,3},{1,3,2}) returns 2, since '2' and '3' are both present, but different locations
          * 
          * */
-         return 0;
+    	int count = 0;
+
+        for (int i=0; i < array1.length; i++) {
+            if (array1[i] != array2[i]&&i<array2.length) {
+                count++;
+            }
+            
+        }
+        if(array2.length>array1.length){
+        	count+=array2.length-array1.length;
+        }
+
+        return count;
+        
+         //return 0;
     }
     
 
@@ -185,8 +223,23 @@ public class ArrayMethods {
          * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
          * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
          * */
-        
-        return 0;
+    	if (array1.length <= 1) {
+            return array1.length;
+        }
+
+        int maxSequence = 0;
+        for (int i = 1; i < array1.length; i++) {
+            int theSequence = 1;
+            while (i < array1.length && array1[i - 1] + 1 == array1[i]) {
+                theSequence++;
+                i++;
+            }
+            if (maxSequence < theSequence) {
+                maxSequence = theSequence;
+            }
+        }
+        return maxSequence;
+        //return 0;
     }
 
     public static int longestSharedSequence(int[] array1, int[] array2){
