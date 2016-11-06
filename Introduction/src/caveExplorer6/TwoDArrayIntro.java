@@ -1,6 +1,6 @@
 package caveExplorer6;
 
-public class twoDArrayPractice6 {
+public class TwoDArrayIntro {
 
 	public static void main(String[] args) {
 		boolean[][] mines = new boolean[6][6];
