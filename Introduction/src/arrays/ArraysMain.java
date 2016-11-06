@@ -6,9 +6,9 @@ public class ArraysMain {
 		//This is how you time how quickly a computer processor 
 		long startTime=System.currentTimeMillis();
 		//arrayIntroMethod();
-		SampleElement sample = new SampleElement(10);
-		sample.increase();
-		System.out.println("The sample element has a number equal to "+sample.getNumber());
+		//SampleElement sample = new SampleElement(10);
+		//sample.increase();
+		//System.out.println("The sample element has a number equal to "+sample.getNumber());
 		
 		long endTime=System.currentTimeMillis();
 		System.out.println("Completed method in "+(endTime-startTime)+" milliseconds");

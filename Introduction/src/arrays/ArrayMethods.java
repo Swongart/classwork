@@ -1,13 +1,14 @@
 package arrays;
 
-public class ArrayMethods {
+import java.util.Random;
 
+public class ArrayMethods {
 
 
     public static void main(String[] args) {
     //double[] list ={5.0,4.0,3.0,2.0,1.0};
     int[] list1={1,2,0,3,4,5};
-    //int[] list2={1,2,3,3,5,6};
+    int[] list2={1,2,3,3,5,6,0};
    // int[] list={1,2,3,4,5};
     //int psn = searchUnsorted(list,3);
     //System.out.println(psn);
@@ -16,7 +17,10 @@ public class ArrayMethods {
     //System.out.println(reverseOrder(list));
     	//System.out.println(sort(list));
     //System.out.println(countDifferences(list1,list2));
-    System.out.println(longestConsecutiveSequence(list1));
+    //System.out.println(longestConsecutiveSequence(list1));
+    //System.out.println(generateDistinctItemsList(4));
+    System.out.println(longestSharedSequence(list1,list2));
+    //System.out.println(randInt(1,2*7));
      /**
       * IMPORTANT NOTE: 
       * This homework assignment will be weighted 4x.
@@ -253,10 +257,77 @@ public class ArrayMethods {
          *          since the sequence '9,6,3,4,3' is in both arrays and is 5 integers long, it doesn't matter that the sequence begins at different indices 
          * longestSequence({9,6,1,4,3,6,7,9}, {9,6,5,8,3,6,7,0}) returns '3', since the sequence '3,6,7' is in both arrays and is 3 integers long
          * */
-        
-        return 0;
+    	int longest=1;
+    	boolean isShared=false;
+    	int sequence=0;
+    	if(array1.length>array2.length){
+    		for(int i=0; i<array1.length;i++){
+    			for(int j=0; j<array2.length;i++){
+    				if(array1[i]==array2[j]){
+    					isShared=true;
+    				}else{
+    					isShared=false;
+    				}
+    				if(isShared){
+    					sequence++;
+    					i++;
+    				}else if(sequence>longest){
+    					longest=sequence;
+    					sequence=0;
+    				}else{
+    					sequence=0;
+    				}
+    			}
+    		}
+    	}else{
+    		for(int i=0; i<array2.length;i++){
+    			for(int j=0;j<array1.length;j++){
+    				if(array2[i]==array1[j]){
+    					isShared=true;
+    				}else{
+    					isShared=false;
+    				}
+    				if(isShared){
+    					sequence++;
+    					i++;
+    				}else if(sequence>longest){
+    					longest=sequence;
+    					sequence=0;
+    				}else{
+    					sequence=0;
+    				}
+    			}
+    		}
+    	}
+    	if(sequence>longest){
+    		return sequence;
+    	}else{
+    		return longest;
+    	}
+    	
     }
+    public static int randInt(int min, int max) {
+		 Random rand = new Random();
 
+		    // nextInt excludes the top value so we have to add 1 to include the top value
+		    int randomNum = rand.nextInt((max - min) + 1) + min;
+
+		    return randomNum;
+	}
+    public static void shuffle(int[] arr) {
+		for(int i=0; i<arr.length;i++){
+			int random=(int)(Math.random()*arr.length);
+			swap(arr,i,random);
+		}
+		
+	}
+	
+	public static void swap(int[] arr, int i, int j) {
+		int placeholder=arr[j];
+		arr[j]=arr[i];
+		arr[i]=placeholder;
+	}
+    
     public static int[] generateDistinctItemsList(int n){
         /**
          * This method needs to generate an int[] of length n that contains distinct, random integers
@@ -265,7 +336,17 @@ public class ArrayMethods {
          * contains only entries between 1 and 2n (inclusive) and has no duplicates
          * 
          * */
-        return null; 
+    	int[] numbers = new int[n];
+  
+    	for(int i=0;i<n;i++){
+    		numbers[i]=i+1;
+    		
+    	}
+    	shuffle(numbers);
+        return numbers;
+    	
+        //return null; 
+    	
     }
     
     
@@ -292,6 +373,10 @@ public class ArrayMethods {
          * CHALLENGE
          * For extra credit, make your method handle NEGATIVE n
          * */
+    	if (n==array.length){
+    		return array;
+    	}
+    	
     }
     
 
