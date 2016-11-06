@@ -2,7 +2,7 @@ package caveExplorer6;
 
 import java.util.Scanner;
 
-public class Practice {
+public class Practice { // this moves the x using keys w,a,s,d. Need to create cooresponding grid.
 	
 	public static String[][] arr2D;
 	public static String[][] pic;
@@ -21,8 +21,6 @@ public class Practice {
 				arr2D[row][col] = "("+row+","+col+")";
 			}
 		}
-		
-		
 		
 		i=2;
 		j=3;
@@ -77,7 +75,7 @@ public class Practice {
 		}
 		return false;
 	}
-
+/*
 	public static void makeMap(String[][] arr){
 		for(int r =0; r<arr.length;r++){
 			for(int c=0; c <arr[0].length;c++){
@@ -91,7 +89,7 @@ public class Practice {
 			}
 		}
 	}
-	
+*/	
 	public static void printPic(String[][] arr){
 		for(int i =0; i<arr.length;i++){
 			for(int j=0; j <arr[i].length;j++){
