@@ -43,7 +43,7 @@ public class Practice { // this moves the x using keys w,a,s,d. Need to create c
 		}
 		for(; y <= row; ++y){ // this is the real loop for the body -> Loop through the rows.
 			for(x = 0; x <= col; ++x){ // Loop through the columns.
-				if(y % 4 == 0){ // for every 3rd row:
+				if(y % 4 == 0){ // for every 4th row:
 					if(x % 2 != 0) System.out.print("____"); // if it's an odd column -> we'll add the top/bottom border.
 					else System.out.print("|"); // if it's an even column -> we'll add the left/right border.
 				}
