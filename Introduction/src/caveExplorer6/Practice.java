@@ -30,24 +30,24 @@ public class Practice { // this moves the x using keys w,a,s,d. Need to create c
 		createGrid(6,6);
 	}
 	private static void createGrid(int row, int col) {
-		row = row*4; // create '|' in the rows.
-		col = col*2; // create '____' in the columns.
+		row = row*3; // create '|' in the rows.
+		col = col*2; // create '___' in the columns.
 		System.out.print(" "); // make space for '|' in the next line so that __ will not be directly on top of |
 		
 		int y = 0, x = 0; // since i'm using two loops and they'll be using the same variable. This allows me to use the variables again.
 		for(y=0; y < 1; ++y){ // create the first row.
 			for(; x < col; ++x){ // traverse through the columns.
-				if(x % 2 == 0) System.out.print("____ "); // in every other column, we'll add the top/bottom border.
+				if(x % 2 == 0) System.out.print("___ "); // in every other column, we'll add the top/bottom border.
 			}
 			System.out.println(" "); // row is finished -> go to next line.
 		}
 		for(; y <= row; ++y){ // this is the real loop for the body -> Loop through the rows.
 			for(x = 0; x <= col; ++x){ // Loop through the columns.
-				if(y % 4 == 0){ // for every 4th row:
-					if(x % 2 != 0) System.out.print("____"); // if it's an odd column -> we'll add the top/bottom border.
+				if(y % 3 == 0){ // for every 3rd row:
+					if(x % 2 != 0) System.out.print("___"); // if it's an odd column -> we'll add the top/bottom border.
 					else System.out.print("|"); // if it's an even column -> we'll add the left/right border.
 				}
-				else if(x % 2 == 0) System.out.print("|    "); // for every other row && the column is even -> add the left/right border.
+				else if(x % 2 == 0) System.out.print("|   "); // for every other row && the column is even -> add the left/right border.
 			}
 			System.out.println(""); // row is finished -> go to next line.
 		}
