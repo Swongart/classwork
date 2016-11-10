@@ -5,7 +5,7 @@ public class Inventory {
 	private String map;
 	
 	public Inventory(){
-		hasMap = true;
+		hasMap = false;
 		updateMap();
 	}
 	
@@ -21,7 +21,7 @@ public class Inventory {
 				//a line of text for each row
 				String text="";
 				for(CaveRoom cr:row){
-					 text +="|";
+					//This line needs to be in the else. //text +="|";
 					if(cr.getDoor(CaveRoom.WEST) != null && cr.getDoor(CaveRoom.WEST).isOpen()){
 						text+=" ";
 					}

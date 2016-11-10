@@ -10,7 +10,7 @@ public class CaveRoom {
 	private CaveRoom[] borderingRooms;
 	private Door[] doors; 
 
-	public static final int NORTH = 0;
+	public static final int NORTH = 0;//final=constant
 	public static final int EAST = 1;
 	public static final int SOUTH = 2;
 	public static final int WEST = 3;
@@ -128,9 +128,20 @@ public class CaveRoom {
 				break;
 			}
 		}
+		goToRoom(indexFound);
+		/*
 		if(borderingRooms[indexFound]!=null&&doors[indexFound].isOpen()){
 			CaveExplorer.currentRoom.leave();
 			CaveExplorer.currentRoom=borderingRooms[indexFound];
+			CaveExplorer.currentRoom.enter();
+			CaveExplorer.inventory.updateMap();
+		}
+		*/
+	}
+	public void goToRoom(int direction){
+		if(borderingRooms[direction]!=null&&doors[direction].isOpen()){
+			CaveExplorer.currentRoom.leave();
+			CaveExplorer.currentRoom=borderingRooms[direction];
 			CaveExplorer.currentRoom.enter();
 			CaveExplorer.inventory.updateMap();
 		}
