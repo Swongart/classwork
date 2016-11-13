@@ -12,7 +12,6 @@ public class TwoDArrayIntro {
 	
 	}
 	
-	
 	private static void matchValues(String[][] field, boolean[][] mines) {
 		for(int row = 0; row < field.length; row++){
 			for(int col = 0; col < field[0].length; col++){
@@ -61,21 +60,6 @@ public class TwoDArrayIntro {
 		}
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	public static void picDrawing(){
