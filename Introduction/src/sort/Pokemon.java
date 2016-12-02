@@ -46,3 +46,4 @@ public class Pokemon {
 		if(poisoned)hp-=15;
 	}
 }
+//

@@ -19,8 +19,13 @@ public class RecursionIntro {
 		}
 
 		private static void forLoop(int numberOfTimes, Action action) {
-			
+			if(numberOfTimes<2){
+				action.act();
+			}else{
+				forLoop(numberOfTimes-1,action);
+			}
 			
 		}
 		
 }
+//
