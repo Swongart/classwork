@@ -7,7 +7,7 @@ public class GameStartEvent implements Event {
 			"Have you arrived to save us from the treacherous Buu?",
 			"We need your help."
 	};
-	public static final String[] SEQ_2={"Greate, I will be busy meditating "
+	public static final String[] SEQ_2={"Great, I will be busy meditating "
 			+ "on my super yellow version while you figure out where Buu is."
 			+ " Kaaa, maaaaaay.."};
 	public GameStartEvent() {
