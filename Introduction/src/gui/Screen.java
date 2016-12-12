@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-public class Screen {
+public abstract class Screen {
 	private BufferedImage image;
 
 	public Screen(int width, int height) {
@@ -15,6 +15,12 @@ public class Screen {
 	}
 	public BufferedImage getImage(){
 		return image;
+	}
+	public int getWidth(){
+		return image.getWidth();
+	}
+	public int getHeight(){
+		return image.getHeight();
 	}
 	
 	public void update() {

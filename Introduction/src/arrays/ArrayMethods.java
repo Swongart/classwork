@@ -98,73 +98,74 @@ public class ArrayMethods {
 	   } 
       }//end for
     }
-    public static double[] getStats(double[] array){
-        /** 
-         * This method return a double[] contain a WHOLE BUNCH of stats
-         * The double array must keep the following stats about the array parameter:
-         * index 0 = the mean
-         * index 1 = the max
-         * index 2 = the min
-         * index 3 = the median
-         * index 4 = the number of values greater than or equal to the mean
-         * index 5 = the number of values below the mean
-         * */
-         double[] stats = new double[6];
-         //find the mean
-         double sum=0;
-         for (int i = 0; i < array.length; i++) {
-             sum += array[i];
-         }
-         double mean= sum / array.length;
-         //find  the max
-         double maxValue = array[0];
-         for (int i = 1; i < array.length; i++) {
-             if (array[i] > maxValue) {
-                 maxValue = array[i];
-             }
-         }
-         //find the min
-         double minValue = array[0];
-         for (int i = 1; i < array.length; i++) {
-             if (array[i] < minValue) {
-                 minValue = array[i];
-             }
-         }
-         //find the median
-//         double[] tempArray= new double[array.length];
-//         tempArray= sort(array);
-         int middle = array.length/2;
-         if (array.length%2 == 1) {
-           double median= array[middle];
-         } else {
-             double median= (array[middle-1] + array[middle]) / 2.0;
-         }
-         //the number of values greater than or equal to the mean
-         int numVals=0;
-         for (int i = 0; i < array.length-1; i++){
-        	 if(array[i]>=mean){
-        		 numVals++;
-        	 }
-         }
-         double geMean=numVals;
-         //the number of values below the mean
-         int valsBelow=0;
-         for (int i = 0; i < array.length-1; i++){
-        	 if(array[i]<mean){
-        		 valsBelow++;
-        	 }
-         }
-         double vbMean=valsBelow;
-         //make stats array
-         stats[0]=mean;
-         stats[1]=maxValue;
-         stats[2]=minValue;
-         stats[3]=median;
-         stats[4]=geMean;
-         stats[5]=vbMean;
-         
-         return stats;
-    }
+    
+//    public static double[] getStats(double[] array){
+//        /** 
+//         * This method return a double[] contain a WHOLE BUNCH of stats
+//         * The double array must keep the following stats about the array parameter:
+//         * index 0 = the mean
+//         * index 1 = the max
+//         * index 2 = the min
+//         * index 3 = the median
+//         * index 4 = the number of values greater than or equal to the mean
+//         * index 5 = the number of values below the mean
+//         * */
+//         double[] stats = new double[6];
+//         //find the mean
+//         double sum=0;
+//         for (int i = 0; i < array.length; i++) {
+//             sum += array[i];
+//         }
+//         double mean= sum / array.length;
+//         //find  the max
+//         double maxValue = array[0];
+//         for (int i = 1; i < array.length; i++) {
+//             if (array[i] > maxValue) {
+//                 maxValue = array[i];
+//             }
+//         }
+//         //find the min
+//         double minValue = array[0];
+//         for (int i = 1; i < array.length; i++) {
+//             if (array[i] < minValue) {
+//                 minValue = array[i];
+//             }
+//         }
+//         //find the median
+////         double[] tempArray= new double[array.length];
+////         tempArray= sort(array);
+//         int middle = array.length/2;
+//         if (array.length%2 == 1) {
+//           double median= array[middle];
+//         } else {
+//             double median= (array[middle-1] + array[middle]) / 2.0;
+//         }
+//         //the number of values greater than or equal to the mean
+//         int numVals=0;
+//         for (int i = 0; i < array.length-1; i++){
+//        	 if(array[i]>=mean){
+//        		 numVals++;
+//        	 }
+//         }
+//         double geMean=numVals;
+//         //the number of values below the mean
+//         int valsBelow=0;
+//         for (int i = 0; i < array.length-1; i++){
+//        	 if(array[i]<mean){
+//        		 valsBelow++;
+//        	 }
+//         }
+//         double vbMean=valsBelow;
+//         //make stats array
+//         stats[0]=mean;
+//         stats[1]=maxValue;
+//         stats[2]=minValue;
+//         //stats[3]=median;
+//         stats[4]=geMean;
+//         stats[5]=vbMean;
+//         
+//         return stats;
+//    }
     
     public static void reverseOrder(int[] array){
         /**
@@ -373,10 +374,11 @@ public class ArrayMethods {
          * CHALLENGE
          * For extra credit, make your method handle NEGATIVE n
          * */
+    	/*
     	if (n==array.length){
     		return array;
     	}
-    	
+    	*/
     }
     
 

@@ -37,7 +37,7 @@ public class DemonstrationArrays {
 			int firstRoll= randInt(1,6);
 			int secondRoll= randInt(1,6);
 			array[i]=firstRoll+secondRoll;
-			System.out.println(x);
+			//System.out.println(x);
 		}
 		
 	}
@@ -48,7 +48,7 @@ public class DemonstrationArrays {
 	}
 	private static void printResults(int[]arr){
 		for (int i=0; i<arr.length;i++){
-			System.out.println((i+2)+"is rolled"+((double)arr[i]/dieArray.length));
+			//System.out.println((i+2)+"is rolled"+((double)arr[i]/dieArray.length));
 		}
 	}
 	
