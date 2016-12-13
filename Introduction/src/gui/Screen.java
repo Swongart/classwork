@@ -3,12 +3,22 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+import gui.Components.Visible;
 public abstract class Screen {
 	private BufferedImage image;
+	private ArrayList<Visible> viewObjects;
 
 	public Screen(int width, int height) {
+		viewObjects = new ArrayList<Visible>();
+		initObjects(viewObjects);
 		initImage(width, height);
 	}
+	
+	public abstract void initObjects(ArrayList<Visible> viewObjects);
+		
+	
 	public void initImage(int width, int height){
 		image= new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		update();
@@ -31,8 +41,13 @@ public abstract class Screen {
 		g.setColor(Color.pink);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
-		g.drawString("Hello World", 40, 100);
-		g.drawOval(20, 70, 100, 50);
+		//for(int i=0;i<viewObjects)
+		
+		//g.drawString("Hello World", 40, 100);
+		//g.drawOval(20, 70, 100, 50);
+		for(Visible v:viewObjects){
+			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
+		}
 	}
 
 }

@@ -20,7 +20,7 @@ private CoordinateScreen cs;
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		new MouseFollower(800,600);
 
 	}
 
