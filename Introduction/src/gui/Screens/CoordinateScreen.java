@@ -24,11 +24,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		button=new Button(20,100,80,40,"Button", new Color(100,100,250), new Action()){
+		button = new Button(20,100,80,40,"Button", new Color(100,100,250), new Action(){
 			public void act(){
 				
 			}
-		};
+		});
 			
 		
 		TextLabel text = new TextLabel(20, 200, 500, 40, "Some text");
