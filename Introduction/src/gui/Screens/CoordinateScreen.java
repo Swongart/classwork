@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import gui.Screen;
 import gui.Components.Action;
 import gui.Components.Button;
+import gui.Components.Graphic;
+import gui.Components.TextArea;
 import gui.Components.TextLabel;
 import gui.Components.Visible;
 
@@ -16,6 +18,8 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	public Button button;
 	private TextLabel text;
+	private TextArea area;
+	private Graphic pika;
 	
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
@@ -29,10 +33,16 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				
 			}
 		});
-			
+		viewObjects.add(button);
+			text= new TextLabel(20,200,500,40,"Some text");
+			viewObjects.add(text);
+			area=new TextArea(20,200,500,40,"This is really long text. It prints over multiple times, as you can see.");
+			viewObjects.add(area);
 		
-		TextLabel text = new TextLabel(20, 200, 500, 40, "Some text");
-		viewObjects.add(text);
+				pika= new Graphic(30,30,100,100, "resources/sampleImages/pika.png");
+		viewObjects.add(pika);
+		//TextLabel text = new TextLabel(20, 200, 500, 40, "Some text");
+		//viewObjects.add(text);
 	}
 
 	@Override
