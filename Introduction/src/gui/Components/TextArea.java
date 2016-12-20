@@ -15,28 +15,37 @@ public class TextArea extends TextLabel {
 	}
 
 public void update(Graphics2D g) {
-		
+		g=clear();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
+		
 		FontMetrics fm = g.getFontMetrics();
 		if(getText()!= null){
-			g.setColor(Color.white);
-			String t = getText();
-			String[] arr = t.split(" ");
-			//just in case text is too wide, cut off
-			int cutoff = t.length();
-			while(cutoff > 0 && fm.stringWidth(t) > getWidth()){
-//				cutoff --;
-				for(int i = 0; i < arr.length; i++){
-					if(arr[i].length() > getWidth()){
-						
-					}else{
-						
+			g.setColor(Color.black);
+			if(getText()!= null){
+				String[]words=getText().split(" ");
+				if(words.length>0){
+					int i =0;
+					final int SPACING = 2;
+					int y=0 + fm.getHeight()+SPACING;
+					String line = words[i]+" ";
+					i++;
+					while(i<words.length){
+						while(i<words.length&& fm.stringWidth(line)+fm.stringWidth(line)+fm.stringWidth(words[i])<getWidth()) {line+=words[i]+" ";
+						i++;
+						}
+						if(y<getHeight()){
+							g.drawString(line, 2, y);
+							y+=fm.getDescent() + fm.getHeight()+SPACING;
+						line="";
+						}else{
+							break;
+						}
 					}
+					
 				}
-//				t = t.substring(0,cutoff); 
 			}
-			g.drawString(t, (getWidth()-fm.stringWidth(t))/2, (getHeight()+fm.getHeight()-fm.getDescent())/2);
+			
 		}
 		
 	}
