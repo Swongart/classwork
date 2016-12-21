@@ -6,7 +6,7 @@ import gui.Screens.CoordinateScreen;
 public class MouseFollower extends GUIApplication {
 	//FIELDS\
 	public static MouseFollower game; // only ONE exists
-	private CoordinateScreen cs;
+	private static CoordinateScreen cs;
 
 	
 	public MouseFollower(int width, int height) {
