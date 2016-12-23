@@ -7,7 +7,7 @@ public class MouseCoordinateGame extends GUIApplication {
 
 	public static MouseCoordinateGame game;
 	public static TextScreen coordinateScreen;
-	public static BallScreen ballScreen;
+	
 	
 	private boolean coordMode;
 	
@@ -22,14 +22,7 @@ public class MouseCoordinateGame extends GUIApplication {
 		coordMode = true;
 	}
 
-	@Override
-	public void initScreen() {
-		ballScreen = new BallScreen(getWidth(),getHeight());
-		coordinateScreen= new TextScreen("Hi everyone",getWidth(), getHeight());
-		
-		
-		setScreen(coordinateScreen);
-		
-	}
+
+	
 
 }

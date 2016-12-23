@@ -96,48 +96,46 @@ public class Graphic implements Visible {
 		
 	}
 
-	@Override
 	public BufferedImage getImage() {
 		
 		return null;
 	}
 
-	@Override
 	public int getX() {
 		
-		return 0;
+		return x;
 	}
 
-	@Override
 	public int getY() {
 		
-		return 0;
+		return y;
 	}
 
-	@Override
 	public int getWidth() {
 		
-		return 0;
+		return image.getWidth();
 	}
 
-	@Override
 	public int getHeight() {
 		
-		return 0;
+		return image.getHeight();
 	}
 
-	@Override
 	public boolean isAnimated() {
 		
 		return false;
 	}
 
-	@Override
 	public void update() {
 		
 		
 	}
-
+	public void setX(int x){
+		this.x=x;
+	}
+	public void setY(int y){
+		this.y=y;
+	}
 
 
 }

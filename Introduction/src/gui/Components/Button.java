@@ -15,6 +15,7 @@ public class Button extends TextLabel implements Clickable{
 		super(x, y, w, h, text);
 		this.color = color;
 		this.action= action;
+		update();
 	}
 	
 	public Color getColor(){
