@@ -27,15 +27,15 @@ public class MyScreen extends Screen implements MouseListener{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		link = new Graphic (200,200,25,"resources/sampleImages/pika.png");
-		back= new Button(50,50,100,60,"Back",Color.GRAY,new Action(){
-			public void act(){
-				MouseFollower.game.setScreen(MouseFollower.cs);
-			}
-		});
+//		link = new Graphic (200,200,25,"resources/sampleImages/pika.png");
+//		back= new Button(50,50,100,60,"Back",Color.GRAY,new Action(){
+//			public void act(){
+//				MouseFollower.game.setScreen(MouseFollower.cs);
+//			}
+//		});
 		
-		//viewObjects.add(link);
-		//viewObjects.add(back);
+		viewObjects.add(link);
+		viewObjects.add(back);
 	}
 
 	@Override
