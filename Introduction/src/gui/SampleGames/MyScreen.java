@@ -2,6 +2,7 @@ package gui.SampleGames;
 
 import java.awt.Color;
 
+
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,13 +12,13 @@ import javax.swing.Action;
 
 import gui.Screen;
 import gui.Components.Button;
-import gui.Components.Action;
 import gui.Components.Graphic;
 import gui.Components.Visible;
 
 public class MyScreen extends Screen implements MouseListener{
 	private Graphic link;
 	private Button back;
+	
 	
 
 	public MyScreen(int width, int height) {
@@ -33,9 +34,11 @@ public class MyScreen extends Screen implements MouseListener{
 //				MouseFollower.game.setScreen(MouseFollower.cs);
 //			}
 //		});
-		
+		link = new Graphic(30,30,100,100,"resources/sampleImages/pika.png");
 		viewObjects.add(link);
-		viewObjects.add(back);
+		
+		//viewObjects.add(link);
+		//viewObjects.add(back);
 	}
 
 	@Override
