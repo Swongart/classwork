@@ -43,17 +43,12 @@ public abstract class Screen {
 		g.setColor(Color.pink);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
-		//for(int i=0;i<viewObjects)
 		
-		//g.drawString("Hello World", 40, 100);
-		//g.drawOval(20, 70, 100, 50);
 		for(int i=0;i<viewObjects.size();i++){
 			Visible v= viewObjects.get(i);
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
-//		for(Visible v:viewObjects){
-//			
-//		}
+
 	}
 	public MouseMotionListener getMouseMotionListener(){
 		return null;

@@ -13,7 +13,6 @@ public class Player extends Component implements PlayerInterface {
 		
 	}
 
-	@Override
 	public void increaseScore(int i) {
 		score+=1;
 		update();
@@ -22,6 +21,8 @@ public class Player extends Component implements PlayerInterface {
 
 	@Override
 	public void update(Graphics2D g) {
+		g.setColor(new Color(200,220,255));
+		g.fillOval(0, 0, 99, 99);
 		g.setColor(Color.black);
 		g.drawOval(0,0,99,99);
 		g.drawString("Score= "+score, 40, 55);

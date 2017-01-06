@@ -7,7 +7,7 @@ import gui.Components.ClickableScreen;
 import gui.Components.TextLabel;
 import gui.Components.Visible;
 
-public class WhackAMoleScreen extends ClickableScreen {
+public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	
 	 private ArrayList<MoleInterface> moles;
 	 private PlayerInterface player;
@@ -19,7 +19,9 @@ public class WhackAMoleScreen extends ClickableScreen {
 	public WhackAMoleScreen(int width, int height) {
 		super(width, height);
 		timeLeft=30.0;
-		Thread play = new Thread();
+		//when making Simon, creating a Thread like this 
+		//is necessary since Simon's screen changes
+		Thread play = new Thread(this);
 		play.start();
 	}
 	
@@ -48,7 +50,7 @@ public class WhackAMoleScreen extends ClickableScreen {
 	}
 	public MoleInterface getAMole(){
 		//return null;
-		return newMole((int)(Math.random()*getWidth()),)
+		return new Mole((int)(Math.random()*getWidth()),(int)(Math.random()*getHeight()));
 	}
 	public void run(){
 		changeText("Ready...");
@@ -56,7 +58,7 @@ public class WhackAMoleScreen extends ClickableScreen {
 		changeText("Go!...");
 		label.setText("");
 		//since this is a timed game, we will use a while loop. 
-		//This is not necessary for games that are'nt timed
+		//This is not necessary for games that are'nt timed (Like Simon)
 		while(timeLeft>0){
 			updateTimer();
 			updateAllMoles();
@@ -78,6 +80,8 @@ public class WhackAMoleScreen extends ClickableScreen {
 					moles.remove(mole);
 				}
 			});
+			addObject(mole);
+			moles.add(mole);
 		}
 	}
 	
@@ -102,6 +106,7 @@ public class WhackAMoleScreen extends ClickableScreen {
 		timeLeft-=.1;
 		timeLabel.setText(""+(int)(timeLeft*10)/10.0);
 	}
+	//Use this METHOD IN SIMON TOOOOOO!!!!!!!!!
 	private void changeText(String string){
 		label.setText(string);
 		try{
