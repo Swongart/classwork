@@ -46,7 +46,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	 * @return
 	 */
 	public PlayerInterface getAPlayer(){
-		return null;
+		return new Player();
 	}
 	public MoleInterface getAMole(){
 		//return null;
