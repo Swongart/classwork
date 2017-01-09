@@ -2,9 +2,9 @@ package simon;
 
 import gui.GUIApplication;
 
-public class SimonGameX extends GUIApplication {
+public class SimonGameSharonWong extends GUIApplication {
 
-	public SimonGameX(int width, int height) {
+	public SimonGameSharonWong(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}
