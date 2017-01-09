@@ -1,4 +1,4 @@
-package simon;
+package gui.simon;
 
 import gui.Components.Clickable;
 
