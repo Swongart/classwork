@@ -25,7 +25,7 @@ public class SimonScreenSharonWong extends ClickableScreen implements Runnable {
 	
 	*/
 	private int roundNum;
-	private boolean correct;
+	private boolean acceptingInput;
 	private int orderIndex;
 	private int last;
 	
@@ -81,9 +81,9 @@ public class SimonScreenSharonWong extends ClickableScreen implements Runnable {
 		
 		Color blue = Color.blue;
 		Color red = Color.red;
-		Color black = Color.black;
-		Color orange = Color.orange;
 		Color pink = Color.pink;
+		Color orange = Color.orange;
+		Color yellow = Color.yellow;
 		//place all buttons
 		for(int i =0; i < numberOfButtons; i++){
 			//b is an object that is a button interface
@@ -93,7 +93,7 @@ public class SimonScreenSharonWong extends ClickableScreen implements Runnable {
 			b.setY(100+(i*10));
 			b.setAction(new Action(){
 				public void act(){
-					if(correct){
+					if(acceptingInput){
 						Thread blink = new Thread(new Runnable(){
 							public void run(){
 								b.highlight();

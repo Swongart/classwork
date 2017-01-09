@@ -50,7 +50,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	}
 	public MoleInterface getAMole(){
 		//return null;
-		return new Mole((int)(Math.random()*getWidth()),(int)(Math.random()*getHeight()));
+		return new Mole((int)(500*Math.random()*getWidth()),(int)(Math.random()*getHeight()));
 	}
 	public void run(){
 		changeText("Ready...");
