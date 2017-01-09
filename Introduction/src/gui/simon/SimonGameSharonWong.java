@@ -11,8 +11,13 @@ public class SimonGameSharonWong extends GUIApplication {
 
 	@Override
 	public void initScreen() {
-		// TODO Auto-generated method stub
-
+		SimonScreenSharonWong simonScreen = new SimonScreenSharonWong (getWidth(),getHeight());
+		setScreen(simonScreen);
+	}
+	public static void main(String[] args){
+		SimonGameSharonWong simonGame = new SimonGameSharonWong(800,600);
+		Thread game = new Thread(simonGame); 
+		game.start(); 
 	}
 
 }
