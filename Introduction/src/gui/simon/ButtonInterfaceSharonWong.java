@@ -15,5 +15,8 @@ public interface ButtonInterfaceSharonWong extends Clickable {
 	void setAction(Action a);
 
 	void highlight();
+
+	void dim();
+
 	
 }
