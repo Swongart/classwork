@@ -51,7 +51,6 @@ public class SimonScreenSharonWong extends ClickableScreen implements Runnable {
 		ProgressInterfaceSharonWong.setRound(roundNum);
 		ProgressInterfaceSharonWong.setSequenceSize(sequence.size());
 		changeText("Simon's turn");
-		label.setText("");
 		playSequence();
 		changeText("Your turn");
 		acceptingInput = true;
