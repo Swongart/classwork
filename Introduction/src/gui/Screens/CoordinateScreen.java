@@ -11,6 +11,7 @@ import gui.Screen;
 import gui.Components.Action;
 import gui.Components.Button;
 import gui.Components.Graphic;
+import gui.Components.MovingComponent;
 import gui.Components.TextArea;
 import gui.Components.TextLabel;
 import gui.Components.Visible;
@@ -46,7 +47,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 
 		pika= new Graphic(30,30,100,100, "resources/sampleImages/pika.png");
 		viewObjects.add(pika);
-		
+		MovingComponent c = new MovingComponent(20,29,100,100);
+		viewObjects.add(c);
+		c.setVy(2);
+		c.setVx(1);
+		c.play();
 	}
 
 	@Override

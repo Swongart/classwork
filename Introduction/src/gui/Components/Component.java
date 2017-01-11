@@ -25,7 +25,7 @@ public abstract class Component implements Visible {
 
 		return image;
 	}
-
+	
 
 	public int getX() {
 		
